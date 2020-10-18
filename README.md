@@ -2,7 +2,7 @@
 # django-boilerplate
 Django backend boilerplate
 
-## Feature
+## Features
 * python 3
 * Swagger
 * API Sample (health check)
