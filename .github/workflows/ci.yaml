@@ -45,4 +45,4 @@ jobs:
     - name: Run tests
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      run: python app/manage.py test remoteMedi/ --settings=app.settings.prod
+      run: python app/manage.py test app/ --settings=app.settings.prod
