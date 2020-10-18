@@ -1,3 +1,4 @@
+![django CI](https://github.com/KimKiHyuk/django-boilerplate/workflows/django%20CI/badge.svg?branch=main)
 # django-boilerplate
 Django backend boilerplate
 
