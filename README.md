@@ -3,7 +3,6 @@
 Django backend boilerplate
 
 ## Features
-* python 3
 * Swagger
 * API Sample (health check)
 * dev mysql database (docker-compose)
@@ -11,15 +10,27 @@ Django backend boilerplate
 ## Development 
 
 ```
-python3 -m venv venv
-docker-compose up -d   
-python app/manage.py makemigrations --settings=app.settings.debug
-python app/manage.py migrate --settings=app.settings.debug
-python manage.py runserver --settings=app.settings.debug
+$ python3 -m venv venv
+$ docker-compose up -d   
+$app python manage.py makemigrations --settings=app.settings.development
+$app python manage.py migrate --settings=app.settings.development
+$app python manage.py runserver --settings=app.settings.development
 ```
 
 
-## Production (Zappa, AWS)
-
-* fill zappa.settings.json
-* run all command using --settings=app.settings.prod
+## Deployment (Zappa, AWS)
+* $app export $(grep -v '^#' .<enviroment>.env | xargs)
+* $app envsubst < zappa_settings.json.tpl > zappa_settings.json
+```json
+{
+    "dev": {
+        "django_settings": "$SETTINGS",
+        "profile_name": "$AWS_PROFILE",
+        "project_name": "django-zappa-template",
+        "runtime": "python3.6",
+        "s3_bucket": "$BUCKET_NAME",
+        "aws_region": "$REGION",
+    }
+}
+```
+* zappa deploy <stage>

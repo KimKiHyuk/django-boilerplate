@@ -382,3 +382,4 @@ bin/
 lib64
 pyvenv.cfg
 secrets.json
+**/*.tpl
