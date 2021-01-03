@@ -1,10 +1,10 @@
 {
     "dev": {
-        "django_settings": "app.settings.prod",
-        "profile_name": "profile_name",
-        "project_name": "project_name",
+        "django_settings": "app.settings.development",
+        "profile_name": "key",
+        "project_name": "django-zappa-template",
         "runtime": "python3.6",
-        "s3_bucket": "s3_name",
+        "s3_bucket": "zappa-django-template-rlgur41",
         "aws_region": "us-east-2"
     }
 }

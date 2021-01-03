@@ -19,3 +19,7 @@ def visit(request):
     Visit.objects.filter(id=visit.id).update(visit = F('visit') + 1)
     return Response({'response' : f'today visit : {visit.visit + 1}'}, status=200)
 
+@api_view(['GET'])
+def ack(request):
+    return Response({'response' : 'server is running'}, status=200)
+

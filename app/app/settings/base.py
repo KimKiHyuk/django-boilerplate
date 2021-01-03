@@ -13,12 +13,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 try:
-    from dotenv import load_dotenv
-    load_dotenv()
+    load_dotenv(dotenv_path=Path('.development.env'))
 except:
     pass
 
